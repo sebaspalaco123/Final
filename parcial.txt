@@ -1,0 +1,37 @@
+--Parcial Final ¡
+
+CREATE TABLE PEDIDOS (
+items integer,
+cajas_grandes integer,
+cajas_pequenas integer,
+cantidad_cajas integer
+)
+
+/*Usted escribirá una función llamada CALCULAR_CAJAS_NECESARIAS que determine si un número de items pueden
+ser despachados y el número de cajas necesarias para empacar los items. Hay 2 tamaños de cajas: grandesç
+que pueden almacenar hasta 5 artículos y pequeñas que pueden almacenar solamente 1 item.
+
+Un pedido no se puede despachar cuando se cumpla una de dos condiciones, que no alcancen
+las cajas para almacenar los items o que una caja grande no tenga su aforo completo, es decir,
+si tengo 4 items y solamente 1 caja grande, no podría despacharla porque la caja no está llena en su totalidad.
+
+Usted deberá crear una función que reciba 3 parámetros en el siguiente orden: número de items, 
+cantidad de cajas grandes disponibles y cantidad de cajas pequeñas disponibles.
+La función retornará un número, si el pedido no se puede despachar, deberá retornar -1,
+de lo contrario, deberá retornar el número de cajas grandes y pequeñas utilizadas para el despacho.*/
+
+
+
+
+
+create or replace function CALCULAR_CAJAS_NECESARIA (numero_item in Integer, cantidad_grande in integer, cantidad_peque in integer)
+return varchar2
+as 
+
+Cajas_disponibles :=
+begin 
+
+
+  if (numero_item > catidad
+
+end; 
