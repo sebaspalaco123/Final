@@ -23,32 +23,54 @@ de lo contrario, deberá retornar el número de cajas grandes y pequeñas utilizada
 
 
 create or replace function CALCULAR_CAJAS_NECESARIA (numero_item in Integer, cantidad_grande in integer, cantidad_peque in integer)
-return varchar2
+return integer
 as
 
 --respuesta
-respuesta varchar2(255);
+respuesta integer;
 --espacio para grandes
 Total_caja_grande integer := cantidad_grande*5;
 
 -- espacio caja pequeña es 1.
+
+--cajas empleadas
+
+caja_empleada integer := 0;
 
 --cajas totales
 Cajas_disponibles integer := Total_caja_grande+cantidad_pequeña;
 begin 
 
   if numero_item > Cajas_disponibles then
-    respuesta := 'el pedido no se puede despachar'; 
+    respuesta :=-1; 
   end if; 
     
-/* if (numero_item 
-    
-    end if;*/
+   if (MOD(numero_item, 5) >= 1) then
+   
+   respuesta:=-1;
+           
+   end if;
+  
+   if(numero_item <= Cajas_disponibles)then
+   
+   caja_empleada :=88;
+   
+   end if;
 
-  return respuesta;
+    return respuesta;
     end; 
-
+    
+create or replace procedure PROCESAR_PEDIDOS(respuesta in integer ) is
 EXEC DBMS_OUTPUT.PUT_LINE(final.CALCULAR_CAJAS_NECESARIA(9,2,1));
+begin
+
+if(respuesta=-1) then
+ DBMS_OUTPUT.PUT_LINE('no fue posible');
+end if;
+
+end;
+
+
 
 
 
