@@ -22,6 +22,8 @@ de lo contrario, deberá retornar el número de cajas grandes y pequeñas utilizada
 
 
 
+
+
 create or replace function CALCULAR_CAJAS_NECESARIA (numero_item in Integer, cantidad_grande in integer, cantidad_peque in integer)
 return integer
 as
@@ -70,6 +72,40 @@ end if;
 
 end;
 
+
+---ARREGLO 
+
+/*
+
+Write an efficient program to find the sum of contiguous subarray within a one-dimensional array
+of numbers which has the largest sum. For this exercise you should create a function called LARGEST_SUM.
+The param needed is an array of integers and you should return the sum (integer) with the conditions given.
+Example:
+For the array [-2,-3,4,-1,-2,1,5,-3] the largest subarray sum is [4,-1,-2,1,5] which has a sum of 7.
+Pista: Implementar algoritmo de Kadane */
+
+
+CREATE TYPE number_array AS VARRAY(50) OF INTEGER;
+
+
+create or replace function LARGEST_SUM (numero_item in Integer, cantidad_grande in integer, cantidad_peque in integer)
+return integer
+as
+
+DECLARE 
+    i integer :=0;
+    DATOS number_array;
+    MAXIMO INTEGER :=number_array[0], i;
+    curr_max integer :=number_array[0];
+    int curr_max = a[0];
+BEGIN 
+     for i in 1..lengthi < size; i++)
+   {
+        curr_max = max(a[i], curr_max+a[i]);
+        max_so_far = max(max_so_far, curr_max);
+   }
+
+END; 
 
 
 
